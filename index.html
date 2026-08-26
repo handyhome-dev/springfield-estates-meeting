@@ -68,6 +68,12 @@
     font-size:15px;
   }
   .pill b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#AFC8E0;font-weight:bold;margin-bottom:2px;}
+  .hero-join{
+    margin-top:16px;
+    font-size:14.5px;
+    color:#DCE9F5;
+  }
+  .hero-join b{color:#ffffff;}
 
   /* diagram */
   .pipeline{
@@ -201,11 +207,27 @@
   }
   .agenda-list li:last-child{border-bottom:none;}
   .agenda-time{
-    flex:0 0 90px;
+    flex:0 0 32px;
     color:var(--navy);
     font-weight:bold;
-    font-size:14px;
+    font-size:15px;
   }
+
+  /* election box */
+  .election-box{
+    margin-top:24px;
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+  .election-box h3{
+    margin:0 0 10px;
+    color:var(--navy);
+    font-size:16px;
+  }
+  .election-box p{margin:0 0 8px;font-size:14.5px;}
+  .election-box p:last-child{margin-bottom:0;}
 
   /* faq */
   details{
@@ -269,6 +291,7 @@
     text-align:center;
   }
   footer .confidential{color:#AFC8E0;margin-top:6px;}
+  footer a{color:#DCE9F5;text-decoration:underline;}
 
   @media(max-width:600px){
     .pipeline{display:none;}
@@ -295,10 +318,11 @@
     <h1>Springfield Estates is a community of shared systems.</h1>
     <p class="hero-sub">Springfield Waste Management Association is being reestablished to care for the shared sewerage systems serving our neighborhood; and reconnect the homeowners who rely on them. It's time we get to managing this together again.</p>
     <div class="hero-meta">
-      <div class="pill"><b>Meeting Date</b>[Insert Date]</div>
-      <div class="pill"><b>Time</b>[Insert Time]</div>
-      <div class="pill"><b>Join Online</b>[Insert Zoom/Teams Link]</div>
+      <div class="pill"><b>Meeting Date</b>Thursday, September 17, 2026</div>
+      <div class="pill"><b>Time</b>6:30 PM Pacific</div>
+      <div class="pill"><b>Join Online</b>Zoom</div>
     </div>
+    <p class="hero-join"><b>Meeting ID:</b> 899 4302 5094 &nbsp;&middot;&nbsp; <b>Passcode:</b> 12013 &nbsp;&middot;&nbsp; <b>Phone:</b> (253) 215-8782</p>
   </div>
 </header>
 
@@ -351,12 +375,19 @@
     <h2>Meeting agenda</h2>
     <p class="section-intro">Simple and to the point &mdash; here's exactly what we'll cover.</p>
     <ul class="agenda-list">
-      <li><span class="agenda-time">[Time]</span><span>Welcome &amp; why this meeting is happening</span></li>
-      <li><span class="agenda-time">[Time]</span><span>Where things stand today &mdash; systems, records, and next steps</span></li>
-      <li><span class="agenda-time">[Time]</span><span>Questions from homeowners</span></li>
-      <li><span class="agenda-time">[Time]</span><span>Election of directors</span></li>
-      <li><span class="agenda-time">[Time]</span><span>Next steps</span></li>
+      <li><span class="agenda-time">1.</span><span>Welcome &amp; why this meeting is happening</span></li>
+      <li><span class="agenda-time">2.</span><span>Where things stand today &mdash; systems, records, and current status</span></li>
+      <li><span class="agenda-time">3.</span><span>What the Association is responsible for</span></li>
+      <li><span class="agenda-time">4.</span><span>Questions from homeowners</span></li>
+      <li><span class="agenda-time">5.</span><span>Election of directors</span></li>
+      <li><span class="agenda-time">6.</span><span>Next steps</span></li>
     </ul>
+    <div class="election-box">
+      <h3>Director Election</h3>
+      <p>Three directors will be elected by the membership during the meeting.</p>
+      <p><b>Nominations:</b> Accepted during the Special Meeting prior to the election.</p>
+      <p><b>Quorum:</b> 10% of the membership (12 of 119 homes) is required to hold the election of directors.</p>
+    </div>
   </div>
 </section>
 
@@ -384,8 +415,12 @@
       <p>No. This meeting is about hearing from homeowners and electing directors. Any assessment amount would go through its own separate, properly noticed process before anyone owes anything.</p>
     </details>
     <details>
+      <summary>How many directors are being elected, and what if not enough people show up?</summary>
+      <p>Three directors will be elected at this meeting. For the election to happen, at least 10% of homes (12 of the Association's 119 homes) need to be represented &mdash; that's the quorum requirement.</p>
+    </details>
+    <details>
       <summary>How do I join the meeting?</summary>
-      <p>This meeting will be held online only, by [Zoom/Teams] &mdash; there is no in-person location. Scan the code on your mailer, or use the link at the top of this page, to join.</p>
+      <p>This meeting will be held online only, by Zoom &mdash; there is no in-person location. Use the Meeting ID and Passcode above, dial in by phone, or scan the code on your mailer to join.</p>
     </details>
   </div>
 </section>
@@ -406,7 +441,7 @@
 <footer>
   <div class="wrap">
     Springfield Waste Management Association &middot; Springfield Estates, Puyallup, WA<br>
-    Questions? [Insert contact email/phone]
+    Questions? <a href="mailto:springfieldestateswma@gmail.com">springfieldestateswma@gmail.com</a>
     <div class="confidential">SWMA &middot; UBI 606 249 172</div>
   </div>
 </footer>
