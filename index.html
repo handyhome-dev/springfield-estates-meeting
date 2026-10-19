@@ -492,6 +492,12 @@
   .ms-panel .ms{font-size:14px;}
   .ms-panel .linkbtn{margin-top:4px;font-size:14px;}
   @media(max-width:900px){.path-layout{grid-template-columns:1fr;}}
+  .hero-grid{display:grid;grid-template-columns:1fr 330px;gap:40px;align-items:center;position:relative;z-index:2;}
+  .hero-grid .tiles{grid-template-columns:1fr;max-width:none;}
+  .hero-text .hero-intro{max-width:none;margin-bottom:0;}
+  .tile.t-members{background:#1a4367;}
+  .topnav .wrap{max-width:1120px;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:24px;}}
 </style>
 </head>
 <body>
@@ -522,7 +528,9 @@
       <line x1="200" y1="460" x2="280" y2="460"/><rect x="280" y="445" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="2"/>
     </g>
   </svg>
-  <div class="wrap">
+  <div class="wrap wide">
+    <div class="hero-grid">
+      <div class="hero-text">
     <div class="eyebrow">Springfield Estates &middot; Puyallup, WA</div>
     <h1>Springfield Waste Management Association</h1>
     <div class="hero-intro">
@@ -530,7 +538,8 @@
       <p>SWMA focuses specifically on the neighborhood&rsquo;s shared wastewater infrastructure. Its purpose is to coordinate maintenance, manage related expenses, and help ensure these systems continue operating safely and reliably.</p>
       <p>The association is governed by a volunteer board of homeowners, with a focus on responsible planning, professional support, and open communication with residents.</p>
     </div>
-    <div class="tiles">
+    </div>
+      <div class="tiles">
       <div class="tile t-board">
         <div class="lbl">Next Board of Directors Meeting</div>
         <div class="when">Monday, November 9</div>
@@ -544,6 +553,7 @@
         <div class="sub">Date and time to be announced</div>
         <div class="det">Notice will be mailed to all homeowners and posted here.</div>
       </div>
+    
     </div>
   </div>
 </header>
@@ -608,7 +618,7 @@
       <div class="card">
         <h3>Past meetings</h3>
         <div class="past-row"><div class="datebox"><div class="m">Oct</div><div class="d">16</div></div><div><div class="t">First Board of Directors Meeting <span class="badge b">Board</span></div>
-          <div class="links"><a href="documents/meetings/2026-10-16-board-agenda.pdf" target="_blank">Agenda</a><span class="pending">Minutes pending approval</span></div></div></div>
+          <div class="links"><span class="pending">Minutes pending approval</span></div></div></div>
         <div class="past-row"><div class="datebox"><div class="m">Oct</div><div class="d">8</div></div><div><div class="t">Special Meeting of Members <span class="badge m">Members</span></div>
           <div class="links"><span class="pending">Minutes pending approval</span></div></div></div>
       </div>
