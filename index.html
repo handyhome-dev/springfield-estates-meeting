@@ -498,6 +498,10 @@
   .tile.t-members{background:#1a4367;}
   .topnav .wrap{max-width:1120px;}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:24px;}}
+  .form-status{margin-top:12px;font-size:14.5px;}
+  .form-status.ok{color:#1e6b3a;font-weight:bold;}
+  .form-status.err{color:#b04040;}
+  button:disabled{opacity:.6;cursor:default;}
 </style>
 </head>
 <body>
@@ -653,8 +657,16 @@
     <h2>Stay Connected</h2>
     <p class="section-intro">Share your contact information so the board can reach you about meetings and updates, by email instead of only by mail.</p>
     <div class="lookup-box">
-      <p style="margin:0 0 6px;font-size:15.5px;">Email the association with your <b>name</b>, <b>property address</b>, <b>lot number</b> (if known), <b>email</b>, and <b>phone</b>.</p>
-      <a class="button" style="margin-top:10px;" href="mailto:springfieldestateswma@gmail.com?subject=Stay%20Connected&amp;body=Name%3A%0AProperty%20address%3A%0ALot%20number%20(if%20known)%3A%0AEmail%3A%0APhone%3A">Email my contact information</a>
+      <form id="connectForm" novalidate>
+        <div class="form-grid">
+          <div><label for="fName">Name</label><input id="fName" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="full"><label for="fAddr">Property address</label><input id="fAddr" name="address" type="text" autocomplete="street-address" required></div>
+          <div class="full"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <button type="submit" id="fSend" style="margin-top:16px;">Send to the association</button>
+        <div id="fStatus" class="form-status" role="status"></div>
+      </form>
       <p class="privacy">Your information goes privately to the association email. It is never posted on this website.</p>
     </div>
   </div>
@@ -756,9 +768,35 @@ buildResultHTML=function(lot,rec){
   return _baseResult(lot,rec)+'<button class="join-btn" onclick="prefill(\''+lot+'\',\''+rec.address.replace(/'/g,"\\'")+'\')">Is this your home? Stay connected &rarr;</button>';
 };
 function prefill(lot,addr){
-  const body='Name:\nProperty address: '+addr+'\nLot number: '+lot+'\nEmail:\nPhone:';
-  window.location.href='mailto:springfieldestateswma@gmail.com?subject='+encodeURIComponent('Stay Connected - Lot '+lot)+'&body='+encodeURIComponent(body);
+  document.getElementById('fAddr').value=addr;
+  document.getElementById('connect').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>document.getElementById('fName').focus(),500);
 }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+<script>
+emailjs.init({publicKey:'CyJP3_zSbNAhqQsKv'});
+document.getElementById('connectForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const st=document.getElementById('fStatus'), btn=document.getElementById('fSend');
+  const name=document.getElementById('fName').value.trim();
+  const address=document.getElementById('fAddr').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  if(!name||!address||!email||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+    st.className='form-status err';st.textContent='Please enter your name, property address, and a valid email.';return;
+  }
+  btn.disabled=true;btn.textContent='Sending\u2026';st.className='form-status';st.textContent='';
+  emailjs.send('service_k1kuxdl','template_11hjmoe',{name,address,email,phone:phone||'Not provided'})
+    .then(function(){
+      st.className='form-status ok';st.textContent='Thank you! Your information was sent to the association.';
+      document.getElementById('connectForm').reset();
+    },function(){
+      st.className='form-status err';st.innerHTML='Something went wrong. Please email us directly at <a href="mailto:springfieldestateswma@gmail.com">springfieldestateswma@gmail.com</a>.';
+    })
+    .finally(function(){btn.disabled=false;btn.textContent='Send to the association';});
+});
 </script>
 </body>
 </html>
