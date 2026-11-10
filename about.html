@@ -508,6 +508,19 @@
   .update-note{font-size:13.5px;color:var(--medium);font-style:italic;margin-top:12px;}
   details p a{font-weight:bold;}
 
+  /* about: milestones rail */
+  .about-body{position:relative;}
+  .about-body section .wrap,.page-hero .wrap{max-width:1140px;}
+  .about-body section .wrap > *{max-width:calc(80% - 24px);}
+  .ms-rail{position:absolute;top:0;bottom:0;left:0;right:0;pointer-events:none;}
+  .ms-rail .rail-inner{max-width:1140px;height:100%;margin:0 auto;padding:48px 24px;display:flex;justify-content:flex-end;}
+  .ms-rail aside{width:20%;align-self:flex-start;position:sticky;top:80px;pointer-events:auto;background:#fff;box-shadow:0 2px 10px rgba(31,78,121,.08);}
+  @media(max-width:980px){
+    .about-body section .wrap > *{max-width:none;}
+    .ms-rail{position:static;background:var(--lightblue);}
+    .ms-rail .rail-inner{display:block;max-width:900px;}
+    .ms-rail aside{width:auto;position:static;}
+  }
 </style>
 </head>
 <body>
@@ -535,6 +548,7 @@
   </div>
 </header>
 
+<div class="about-body">
 <section>
   <div class="wrap">
     <h2>Why the association exists</h2>
@@ -599,11 +613,23 @@
   </div>
 </section>
 
+<div class="ms-rail">
+  <div class="rail-inner">
+    <aside class="ms-panel" id="milestones">
+      <h3>Milestones</h3>
+      <div class="ms"><span class="when">November 9, 2026</span><b>Board of Directors meeting:</b> the board selected Association Services of Washington as the association&rsquo;s management company.</div>
+        <div class="ms"><span class="when">October 16, 2026</span><b>Board of Directors meeting:</b> officer titles assigned and a monthly meeting schedule established, the second Monday of each month.</div>
+        <div class="ms"><span class="when">October 8, 2026</span><b>Special Meeting of Members:</b> homeowners met and elected three directors.</div>
+    </aside>
+  </div>
+</div>
+</div>
+
 <footer>
   <div class="wrap">
     Springfield Waste Management Association &middot; Springfield Estates, Puyallup, WA<br>
     Questions? <a href="mailto:springfieldestateswma@gmail.com">springfieldestateswma@gmail.com</a>
-    <div class="confidential">&copy; 2026 Springfield Waste Management Association &middot; Last updated October 19, 2026</div>
+    <div class="confidential">&copy; 2026 Springfield Waste Management Association &middot; Last updated November 10, 2026</div>
   </div>
 </footer>
 </body>
