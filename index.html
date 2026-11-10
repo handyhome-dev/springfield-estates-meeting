@@ -401,6 +401,7 @@
   .meeting-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--border);}
   .meeting-row:last-child{border-bottom:none;}
   .datebox{flex:0 0 56px;text-align:center;background:var(--lightblue);border-radius:6px;padding:6px 0;color:var(--navy);}
+  .datebox.mem{background:#fff;border:1px solid #BFD3E8;}
   .datebox .m{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:bold;}
   .datebox .d{font-size:22px;font-weight:bold;line-height:1.1;}
   .meeting-row .t{font-weight:bold;}
@@ -465,6 +466,9 @@
   .past-row .links a{font-weight:bold;text-decoration:none;margin-right:14px;}
   .past-row .links a:hover{text-decoration:underline;}
   .pending{color:var(--light);font-style:italic;}
+  .past-row .links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;}
+  .past-row .links a.docbtn{display:inline-block;margin:0;padding:4px 12px;border:1px solid var(--navy);border-radius:4px;color:var(--navy);font-size:13.5px;font-weight:bold;text-decoration:none;background:#fff;}
+  .past-row .links a.docbtn:hover{background:var(--navy);color:#fff;text-decoration:none;}
   .ms{position:relative;padding:0 0 14px 22px;font-size:14.5px;}
   .ms:before{content:"";position:absolute;left:4px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--navy);}
   .ms:after{content:"";position:absolute;left:8px;top:16px;bottom:0;width:1px;background:var(--border);}
@@ -548,14 +552,14 @@
       <div class="tiles">
       <div class="tile t-board">
         <div class="lbl">Next Board of Directors Meeting</div>
-        <div class="when">Monday, November 9</div>
+        <div class="when">Monday, December 14</div>
         <div class="sub">6:00 PM Pacific &middot; Zoom</div>
         <div class="det"><b>Meeting ID:</b> 870 9097 1727 &nbsp;&middot;&nbsp; <b>Passcode:</b> 12013<br><b>Phone:</b> (253) 215-8782</div>
         <a class="btn" href="https://us06web.zoom.us/j/87090971727?pwd=mMrLfEXCGrPrBMWYZGkFEhpWFHB21R.1" target="_blank" rel="noopener">Join on Zoom</a>
       </div>
       <div class="tile t-members">
         <div class="lbl">Next Members&rsquo; Meeting</div>
-        <div class="when">TBD</div>
+        <div class="when">Early 2027</div>
         <div class="sub">Date and time to be announced</div>
         <div class="det">Notice will be mailed to all homeowners and posted here.</div>
       </div>
@@ -587,6 +591,7 @@
       </div>
       <aside class="ms-panel">
         <h3>Milestones</h3>
+        <div class="ms"><span class="when">November 9, 2026</span><b>Board of Directors meeting:</b> the board selected Association Services of Washington as the association&rsquo;s management company.</div>
         <div class="ms"><span class="when">October 16, 2026</span><b>Board of Directors meeting:</b> officer titles assigned and a monthly meeting schedule established, the second Monday of each month.</div>
         <div class="ms"><span class="when">October 8, 2026</span><b>Special Meeting of Members:</b> homeowners met and elected three directors.</div>
       </aside>
@@ -616,16 +621,18 @@
     <div class="grid2">
       <div class="card">
         <h3>Upcoming</h3>
-        <div class="meeting-row"><div class="datebox"><div class="m">Nov</div><div class="d">9</div></div><div><div class="t">Board of Directors <span class="badge b">Board</span></div><div class="s">Monday, 6:00 PM &middot; Zoom</div></div></div>
         <div class="meeting-row"><div class="datebox"><div class="m">Dec</div><div class="d">14</div></div><div><div class="t">Board of Directors <span class="badge b">Board</span></div><div class="s">Monday, 6:00 PM &middot; Zoom</div></div></div>
         <div class="meeting-row"><div class="datebox"><div class="m">Jan</div><div class="d">11</div></div><div><div class="t">Board of Directors <span class="badge b">Board</span></div><div class="s">Monday, 6:00 PM &middot; Zoom</div></div></div>
-        <div class="meeting-row"><div class="datebox"><div class="m">TBD</div><div class="d">&ndash;</div></div><div><div class="t">Members&rsquo; Meeting <span class="badge m">Members</span></div><div class="s">Date to be announced</div></div></div>
+        <div class="meeting-row"><div class="datebox"><div class="m">Feb</div><div class="d">8</div></div><div><div class="t">Board of Directors <span class="badge b">Board</span></div><div class="s">Monday, 6:00 PM &middot; Zoom</div></div></div>
+        <div class="meeting-row"><div class="datebox mem"><div class="m">TBD</div><div class="d">&ndash;</div></div><div><div class="t">Members&rsquo; Meeting <span class="badge m">Members</span></div><div class="s">Targeting early 2027 &middot; date to be announced</div></div></div>
       </div>
       <div class="card">
         <h3>Past meetings</h3>
+        <div class="past-row"><div class="datebox"><div class="m">Nov</div><div class="d">9</div></div><div><div class="t">Board of Directors Meeting <span class="badge b">Board</span></div>
+          <div class="links"><a class="docbtn" href="meetings/SWMA%20-%20Board%20Meeting%20Agenda%20-%20110926.pdf" target="_blank" rel="noopener">Agenda</a><span class="pending">Minutes pending approval</span></div></div></div>
         <div class="past-row"><div class="datebox"><div class="m">Oct</div><div class="d">16</div></div><div><div class="t">First Board of Directors Meeting <span class="badge b">Board</span></div>
-          <div class="links"><span class="pending">Minutes pending approval</span></div></div></div>
-        <div class="past-row"><div class="datebox"><div class="m">Oct</div><div class="d">8</div></div><div><div class="t">Special Meeting of Members <span class="badge m">Members</span></div>
+          <div class="links"><a class="docbtn" href="meetings/SWMA%20-%20Directors%20Meeting%20Agenda%20-%20101626.pdf" target="_blank" rel="noopener">Agenda</a><a class="docbtn" href="meetings/SWMA%20-%20Board%20-%20Meeting%20Minutes%20-%20101626%20FINAL.pdf" target="_blank" rel="noopener">Minutes</a></div></div></div>
+        <div class="past-row"><div class="datebox mem"><div class="m">Oct</div><div class="d">8</div></div><div><div class="t">Special Meeting of Members <span class="badge m">Members</span></div>
           <div class="links"><span class="pending">Minutes pending approval</span></div></div></div>
       </div>
     </div>
@@ -676,7 +683,7 @@
   <div class="wrap">
     Springfield Waste Management Association &middot; Springfield Estates, Puyallup, WA<br>
     Questions? <a href="mailto:springfieldestateswma@gmail.com">springfieldestateswma@gmail.com</a>
-    <div class="confidential">&copy; 2026 Springfield Waste Management Association &middot; Last updated October 19, 2026</div>
+    <div class="confidential">&copy; 2026 Springfield Waste Management Association &middot; Last updated November 10, 2026</div>
   </div>
 </footer>
 <script>
